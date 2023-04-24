@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>To Do Items Email Addresses</title>
-    </head>
-    <body>
-        <p>Here are a list of the emails collected so far:</p>
-        <ul>
-            {% for email in email_addresses %}
-            <li> {{ email }} </li>
-            {% endfor %}
-            {% for task in task_list %}
-            <li> {{ task }} </li>
-            {% endfor %}
-            {% for priority in priority_list %}
-            <li> {{ priority }} </li>
-            {% endfor %}
-        </ul>
-        <p>This concludes the list.</p>
-    </body>
+
+<head>
+    <title>To Do Items Lists</title>
+</head>
+
+<body>
+    <p>Here are a list of the tasks collected so far:</p>
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Task</th>
+            <th>Priority</th>
+        </tr>
+        {% for task in task_list %}
+        <tr>
+            <td>{{ task[0] }}</td>
+            <td>{{ task[1] }}</td>
+            <td>{{ task[2] }}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    <p>This concludes the list.</p>
+</body>
+
 </html>
